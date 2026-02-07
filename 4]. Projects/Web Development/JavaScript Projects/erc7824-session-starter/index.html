@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ERC-7824 Yellow Session Starter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>ERC-7824 Yellow Session Starter</h1>
+        <p>
+          Connect a wallet, authenticate with Yellow ClearNode, and open an application session.
+        </p>
+      </header>
+
+      <section class="panel">
+        <h2>1. Wallet</h2>
+        <div class="row">
+          <button id="connectWallet">Connect Wallet</button>
+          <span id="walletStatus" class="status">Not connected</span>
+        </div>
+        <div class="row">
+          <label>Wallet Address</label>
+          <input id="walletAddress" type="text" readonly />
+        </div>
+        <div class="row">
+          <label>Session Key Address</label>
+          <input id="sessionKeyAddress" type="text" readonly />
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>2. Session Settings</h2>
+        <div class="row">
+          <label for="applicationId">Application ID</label>
+          <input id="applicationId" type="text" value="demo.app" />
+        </div>
+        <div class="row">
+          <label for="scope">Scope</label>
+          <input id="scope" type="text" value="app_session" />
+        </div>
+        <div class="row">
+          <label for="allowanceAsset">Allowance Asset</label>
+          <input id="allowanceAsset" type="text" placeholder="Loading assets..." />
+        </div>
+        <div class="row">
+          <label for="allowanceAmount">Allowance Amount</label>
+          <input id="allowanceAmount" type="text" value="0" />
+        </div>
+        <div class="row">
+          <label for="sessionMinutes">Session Duration (minutes)</label>
+          <input id="sessionMinutes" type="number" value="60" min="1" />
+        </div>
+        <div class="row">
+          <button id="startSession">Start Session</button>
+          <span id="sessionStatus" class="status">Idle</span>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>3. Log</h2>
+        <pre id="log"></pre>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
